@@ -14,9 +14,17 @@ let notes = [
   },
 ];
 
+const path = require("path");
+
+app.use(express.static(path.join(__dirname, "dist")));
+
 app.get("/", (req, res) => {
-  res.send("<h1>Hello World</>");
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
+
+// app.get("/", (req, res) => {
+//   res.send("<h1>Hello World</>");
+// });
 
 app.get("/api/notes", (req, res) => {
   res.json(notes);
