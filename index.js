@@ -14,9 +14,9 @@ let notes = [
   },
 ];
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "dist", "index.html"));
-// });
+app.get("/", (req, res) => {
+  res.send("<h1>Hello World</>");
+});
 
 app.get("/api/notes", (req, res) => {
   res.json(notes);
